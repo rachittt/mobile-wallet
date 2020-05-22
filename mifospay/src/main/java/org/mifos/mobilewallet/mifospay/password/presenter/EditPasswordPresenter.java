@@ -39,12 +39,31 @@ public class EditPasswordPresenter implements EditPasswordContract.EditPasswordP
     }
 
     @Override
+    public void handleSavePasswordButtonStatus(String currentPassword,
+                                               String newPassword,
+                                               String newPasswordRepeat) {
+        if (currentPassword.equals("") || newPassword.equals("") ||
+                newPasswordRepeat.equals("")) {
+            mEditPasswordView.disableSavePasswordButton();
+        } else {
+            if (newPassword.equals(newPasswordRepeat)) {
+                mEditPasswordView.enableSavePasswordButton();
+            } else {
+                mEditPasswordView.disableSavePasswordButton();
+            }
+        }
+    }
+
+    @Override
     public void updatePassword(String currentPassword, final String newPassword,
             final String newPasswordRepeat) {
         mEditPasswordView.startProgressBar();
         if (isNotEmpty(currentPassword) && isNotEmpty(newPassword)
                 && isNotEmpty(newPasswordRepeat)) {
-            if (isNewPasswordValid(newPassword, newPasswordRepeat)) {
+            if (currentPassword.equals(newPassword)) {
+                mEditPasswordView.stopProgressBar();
+                mEditPasswordView.showError(Constants.ERROR_PASSWORDS_CANT_BE_SAME);
+            } else if (isNewPasswordValid(newPassword, newPasswordRepeat)) {
                 updatePassword(currentPassword, newPassword);
             } else {
                 mEditPasswordView.stopProgressBar();

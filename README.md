@@ -1,4 +1,4 @@
-<img height='175' src="https://user-images.githubusercontent.com/37406965/51083189-d5dc3a80-173b-11e9-8ca0-28015e0893ac.png" align="left" hspace="1" vspace="1">
+<img height='175' src="https://user-images.githubusercontent.com/44283521/78983673-455cf780-7b42-11ea-849e-ecd2009dd562.png" align="left" hspace="1" vspace="1">
 
 # Mobile Wallet
 
@@ -22,8 +22,8 @@ that can be used as a dependency in any other wallet based project. It is develo
 ## How to Contribute
 
 This is an OpenSource project and we would be happy to see new contributors. The issues should be raised via the GitHub issue tracker.
-For Issue tracker guidelines please click <a href="https://github.com/openMF/mobile-wallet/blob/master/.github/CONTRIBUTING.md">here</a>. All fixes should be proposed via pull requests.
-For pull request guidelines please click <a href="https://github.com/openMF/mobile-wallet/blob/master/.github/CONTRIBUTING.md">here</a>. For commit style guidelines please click <a href="https://github.com/openMF/mobile-wallet/wiki/Commit-style-guide">here</a>.
+For Issue tracker guidelines please click <a href="https://github.com/openMF/mobile-wallet/blob/master/.github/CONTRIBUTING.md#issue-tracker">here</a>. All fixes should be proposed via pull requests.
+For pull request guidelines please click <a href="https://github.com/openMF/mobile-wallet/blob/master/.github/CONTRIBUTING.md#pull-requests">here</a>. For commit style guidelines please click <a href="https://github.com/openMF/mobile-wallet/wiki/Commit-style-guide">here</a>.
 
 ### Branch Policy
 
@@ -75,6 +75,21 @@ Before you begin, you should have already downloaded the Android Studio SDK and 
 `git checkout dev`
 `git pull upstream dev`
 
+## Travis CI
+<a href="https://travis-ci.com">Travis CI</a> is a hosted continuous integration service used to build and test software projects hosted at GitHub. We use Travis CI for continous integration and clean maintainence of code. All your pull requests must pass the CI build only then, it will be allowed to merge. Sometimes,when the build doesn't pass you can use these commands in your local terminal and check for the errors,</br>
+
+For Mac OS, you can use the following commands:
+
+* `./gradlew check` quality checks on your project’s code using Checkstyle and generates reports from these checks.</br>
+* `./gradlew spotlessApply` an check and apply formatting to any plain-text file.</br>
+* `./gradlew build`  provides a command line to execute build script.</br>
+
+
+For Windows, you can use the following commands:
+
+* `gradlew check` quality checks on your project’s code using Checkstyle and generates reports from these checks.</br>
+* `gradlew spotlessApply` an check and apply formatting to any plain-text file.</br>
+* `gradlew build`  provides a command line to execute build script.</br>
 
 ## Wiki
 
